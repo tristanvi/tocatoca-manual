@@ -1,0 +1,14 @@
+node_modules/
+dist/
+.astro/
+.DS_Store
+
+# Local production files
+*.psd
+*.jsx
+.DS_Store
+
+# Local production files
+*.psd
+*.jsx
+.DS_Store
