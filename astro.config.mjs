@@ -5,7 +5,7 @@ export default defineConfig({
   site: 'https://manual.tocatoca.com',
   integrations: [
     starlight({
-      title: 'TocaToca Handbuch',
+      title: 'TocaToca Manual',
       description: 'Benutzerhandbuch für TocaToca.',
       customCss: ['./src/styles/tocatoca.css'],
       components: {

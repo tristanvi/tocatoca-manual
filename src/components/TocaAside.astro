@@ -35,6 +35,19 @@ const callout =
 			: normalizedTitle.includes('faq') || normalizedTitle.includes('frage')
 				? 'faq'
 				: type;
+
+const routeData = Astro.locals.starlightRoute.entry.data;
+const showVixelle = routeData.template !== 'splash';
+const vixelleImages = {
+	vixelle: '/images/brand/Vixelle-info.png',
+	discovery: '/images/brand/Vixelle-relaxed.png',
+	faq: '/images/brand/Vixelle-thinking.png',
+	tip: '/images/brand/Vixelle-info.png',
+	note: '/images/brand/Vixelle-info.png',
+	caution: '/images/brand/Vixelle-important.png',
+	danger: '/images/brand/Vixelle-important.png',
+} as const;
+const vixelleSrc = vixelleImages[callout as keyof typeof vixelleImages];
 ---
 
 <aside
@@ -45,6 +58,7 @@ const callout =
 	<p class="starlight-aside__title" aria-hidden="true">
 		<Icon name={icon || icons[type]} class="starlight-aside__icon" />{title}
 	</p>
+	{showVixelle && vixelleSrc && <img class="toc-callout__vixelle" src={vixelleSrc} alt="" width="96" height="96" loading="lazy" />}
 	<div class="starlight-aside__content">
 		<slot />
 	</div>
