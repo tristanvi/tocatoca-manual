@@ -6,7 +6,14 @@ export default defineConfig({
   integrations: [
     starlight({
       title: 'TocaToca Handbuch',
-      description: 'Benutzerhandbuch fur TocaToca.',
+      description: 'Benutzerhandbuch für TocaToca.',
+      customCss: ['./src/styles/tocatoca.css'],
+      components: {
+        Aside: './src/components/TocaAside.astro',
+        Footer: './src/components/TocaFooter.astro',
+        Hero: './src/components/TocaHero.astro',
+        SiteTitle: './src/components/TocaSiteTitle.astro',
+      },
       defaultLocale: 'de',
       locales: {
         de: {
@@ -57,14 +64,14 @@ export default defineConfig({
           },
           items: [
             { label: 'Suche verwenden', slug: 'musik-finden/suche-verwenden' },
-            { label: 'Nach Kunstlern suchen', slug: 'musik-finden/nach-kuenstlern-suchen' },
+            { label: 'Nach Künstlern suchen', slug: 'musik-finden/nach-kuenstlern-suchen' },
             { label: 'Nach Alben/Sammlungen suchen', slug: 'musik-finden/nach-alben-sammlungen-suchen' },
             { label: 'Artist-Links verstehen', slug: 'musik-finden/artist-links-verstehen' },
             { label: 'Songlisten verwenden', slug: 'musik-finden/songlisten-verwenden' },
           ],
         },
         {
-          label: 'Musik horen',
+          label: 'Musik hören',
           translations: {
             en: 'Listening',
             es: 'Escuchar musica',
@@ -79,7 +86,7 @@ export default defineConfig({
           ],
         },
         {
-          label: 'Nutzung auf Geraten',
+          label: 'Nutzung auf Geräten',
           translations: {
             en: 'Using Devices',
             es: 'Uso en dispositivos',
@@ -132,7 +139,7 @@ export default defineConfig({
             fr: 'FAQ',
             it: 'FAQ',
           },
-          items: [{ label: 'Haufige Fragen', slug: 'faq' }],
+          items: [{ label: 'Häufige Fragen', slug: 'faq' }],
         },
       ],
     }),
