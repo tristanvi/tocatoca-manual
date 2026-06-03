@@ -95,8 +95,6 @@ export default defineConfig({
           },
           items: [
             { label: 'Desktop Browser', slug: 'nutzung-auf-geraeten/desktop-browser' },
-            { label: 'iPhone / iPad', slug: 'nutzung-auf-geraeten/iphone-ipad' },
-            { label: 'Android', slug: 'nutzung-auf-geraeten/android' },
             { label: 'Probleme mit mobilen Browsern', slug: 'nutzung-auf-geraeten/probleme-mit-mobilen-browsern' },
           ],
         },
