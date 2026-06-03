@@ -107,9 +107,10 @@ export default defineConfig({
             it: 'Account e accesso',
           },
           items: [
-            { label: 'Login-Probleme', slug: 'konto-zugang/login-probleme' },
+            { label: 'Konto erstellen', slug: 'erste-schritte/konto-erstellen' },
             { label: 'Abonnementstatus', slug: 'konto-zugang/abonnementstatus' },
-            { label: 'Passwort / Magic Link / Zugang', slug: 'konto-zugang/passwort-magic-link-zugang' },
+            { label: 'Passwort und Zugang', slug: 'konto-zugang/passwort-magic-link-zugang' },
+            { label: 'Verantwortungsvolle Nutzung', slug: 'konto-zugang/verantwortungsvolle-nutzung' },
             { label: 'Ausloggen', slug: 'konto-zugang/ausloggen' },
           ],
         },
