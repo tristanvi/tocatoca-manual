@@ -12,6 +12,7 @@ export default defineConfig({
         Aside: './src/components/TocaAside.astro',
         Footer: './src/components/TocaFooter.astro',
         Hero: './src/components/TocaHero.astro',
+        Sidebar: './src/components/TocaSidebar.astro',
         SiteTitle: './src/components/TocaSiteTitle.astro',
       },
       defaultLocale: 'de',

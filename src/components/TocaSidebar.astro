@@ -1,0 +1,119 @@
+---
+import MobileMenuFooter from 'virtual:starlight/components/MobileMenuFooter';
+import SidebarPersister from '@astrojs/starlight/components/SidebarPersister.astro';
+import SidebarSublist from '@astrojs/starlight/components/SidebarSublist.astro';
+
+const currentPath = Astro.url.pathname.replace(/\/$/, '');
+const locale = Astro.locals.starlightRoute.locale;
+
+const makeLink = (label, href) => ({
+	type: 'link',
+	label,
+	href,
+	isCurrent: currentPath === href.replace(/\/$/, ''),
+	badge: undefined,
+	attrs: {},
+});
+
+const makeGroup = (label, entries) => ({
+	type: 'group',
+	label,
+	entries,
+	collapsed: false,
+	badge: undefined,
+});
+
+const germanSidebar = [
+	makeGroup('Erste Schritte', [
+		makeLink('Was ist TocaToca?', '/de/erste-schritte/was-ist-tocatoca/'),
+		makeLink('Konto erstellen', '/de/erste-schritte/konto-erstellen/'),
+		makeLink('Einloggen', '/de/erste-schritte/einloggen/'),
+		makeLink('Abonnement aktivieren', '/de/erste-schritte/abonnement-aktivieren/'),
+		makeLink('Erste Musik abspielen', '/de/erste-schritte/erste-musik-abspielen/'),
+	]),
+	makeGroup('Musik finden', [
+		makeLink('Suche verwenden', '/de/musik-finden/suche-verwenden/'),
+		makeLink('Nach Künstlern suchen', '/de/musik-finden/nach-kuenstlern-suchen/'),
+		makeLink('Nach Alben/Sammlungen suchen', '/de/musik-finden/nach-alben-sammlungen-suchen/'),
+		makeLink('Artist-Links verstehen', '/de/musik-finden/artist-links-verstehen/'),
+		makeLink('Songlisten verwenden', '/de/musik-finden/songlisten-verwenden/'),
+	]),
+	makeGroup('Musik hören', [
+		makeLink('Player bedienen', '/de/musik-hoeren/player-bedienen/'),
+		makeLink('Warteschlange', '/de/musik-hoeren/warteschlange/'),
+		makeLink('Favoriten', '/de/musik-hoeren/favoriten/'),
+		makeLink('Playlists', '/de/musik-hoeren/playlists/'),
+	]),
+	makeGroup('Nutzung auf Geräten', [
+		makeLink('Desktop Browser', '/de/nutzung-auf-geraeten/desktop-browser/'),
+		makeLink('Probleme mit mobilen Browsern', '/de/nutzung-auf-geraeten/probleme-mit-mobilen-browsern/'),
+	]),
+	makeGroup('Konto & Zugang', [
+		makeLink('Konto erstellen', '/de/erste-schritte/konto-erstellen/'),
+		makeLink('Abonnementstatus', '/de/konto-zugang/abonnementstatus/'),
+		makeLink('Passwort und Zugang', '/de/konto-zugang/passwort-magic-link-zugang/'),
+		makeLink('Verantwortungsvolle Nutzung', '/de/konto-zugang/verantwortungsvolle-nutzung/'),
+		makeLink('Ausloggen', '/de/konto-zugang/ausloggen/'),
+	]),
+	makeGroup('Fehlerbehebung', [
+		makeLink('Kein Ton', '/de/fehlerbehebung/kein-ton/'),
+		makeLink('Musik startet nicht', '/de/fehlerbehebung/musik-startet-nicht/'),
+		makeLink('Login wird nicht gehalten', '/de/fehlerbehebung/login-wird-nicht-gehalten/'),
+		makeLink('Seite neu laden', '/de/fehlerbehebung/seite-neu-laden/'),
+		makeLink('Support kontaktieren', '/de/fehlerbehebung/support-kontaktieren/'),
+	]),
+	makeGroup('FAQ', [makeLink('Häufige Fragen', '/de/faq/')]),
+];
+
+const englishSidebar = [
+	makeGroup('Getting Started', [
+		makeLink('What is TocaToca?', '/en/getting-started/what-is-tocatoca/'),
+		makeLink('Create an Account', '/en/getting-started/create-an-account/'),
+		makeLink('Logging In', '/en/getting-started/logging-in/'),
+		makeLink('Activate Your Subscription', '/en/getting-started/activate-your-subscription/'),
+		makeLink('First Playback', '/en/getting-started/first-playback/'),
+	]),
+	makeGroup('Discover Music', [
+		makeLink('Using Search', '/en/discover-music/using-search/'),
+		makeLink('Finding Artists', '/en/discover-music/finding-artists/'),
+		makeLink('Finding Albums and Collections', '/en/discover-music/finding-albums-and-collections/'),
+		makeLink('Understanding Artist Links', '/en/discover-music/understanding-artist-links/'),
+		makeLink('Using Recording Lists', '/en/discover-music/using-recording-lists/'),
+	]),
+	makeGroup('Listening', [
+		makeLink('Using the Player', '/en/listening/using-the-player/'),
+		makeLink('Queue', '/en/listening/queue/'),
+		makeLink('Favorites', '/en/listening/favorits/'),
+		makeLink('Playlists', '/en/listening/playlists-en/'),
+	]),
+	makeGroup('Devices', [
+		makeLink('Desktop Browser', '/en/devices/desktop-browser-en/'),
+		makeLink('Mobile Browser Issues', '/en/devices/mobile-browser-issues/'),
+	]),
+	makeGroup('Account & Access', [
+		makeLink('Create an Account', '/en/getting-started/create-an-account/'),
+		makeLink('Subscription Status', '/en/account-access/subscription-status/'),
+		makeLink('Passwords and Account Access', '/en/account-access/passwords-account-access/'),
+		makeLink('Responsible Use', '/en/account-access/responsible-use/'),
+		makeLink('Logging Out', '/en/account-access/logging-out/'),
+	]),
+	makeGroup('Troubleshooting', [
+		makeLink('No Sound', '/en/troubleshooting/no-sound/'),
+		makeLink('Playback Does Not Start', '/en/troubleshooting/playback-does-not-start/'),
+		makeLink('Login Is Not Remembered', '/en/troubleshooting/login-is-not-remembered/'),
+		makeLink('Reloading the Page', '/en/troubleshooting/reloading-the-page/'),
+		makeLink('Contact Support', '/en/troubleshooting/contact-support/'),
+	]),
+	makeGroup('FAQ', [makeLink('Frequently Asked Questions', '/en/faq-en/')]),
+];
+
+const sidebar = locale === 'en' ? englishSidebar : germanSidebar;
+---
+
+<SidebarPersister>
+	<SidebarSublist sublist={sidebar} />
+</SidebarPersister>
+
+<div class="md:sl-hidden">
+	<MobileMenuFooter />
+</div>
