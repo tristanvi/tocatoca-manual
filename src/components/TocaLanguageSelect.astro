@@ -1,0 +1,43 @@
+---
+import Select from '@astrojs/starlight/components/Select.astro';
+
+const currentLocale = Astro.locals.starlightRoute.locale;
+---
+
+<starlight-lang-select>
+	<Select
+		icon="translate"
+		label={Astro.locals.t('languageSelect.accessibleLabel')}
+		options={[
+			{ label: 'Deutsch', value: '/de/', selected: currentLocale === 'de' },
+			{ label: 'English', value: '/en/', selected: currentLocale === 'en' },
+		]}
+		width="7em"
+	/>
+</starlight-lang-select>
+
+<script>
+	class StarlightLanguageSelect extends HTMLElement {
+		constructor() {
+			super();
+			const select = this.querySelector('select');
+			if (!select) return;
+
+			select.addEventListener('change', (event) => {
+				if (event.currentTarget instanceof HTMLSelectElement) {
+					window.location.pathname = event.currentTarget.value;
+				}
+			});
+
+			window.addEventListener('pageshow', (event) => {
+				if (!event.persisted) return;
+				const markupSelectedIndex = select.querySelector('option[selected]')?.index;
+				if (markupSelectedIndex !== select.selectedIndex) {
+					select.selectedIndex = markupSelectedIndex ?? 0;
+				}
+			});
+		}
+	}
+
+	customElements.define('starlight-lang-select', StarlightLanguageSelect);
+</script>
