@@ -115,6 +115,13 @@ const frenchSidebar = [
 		makeLink('Activer votre abonnement', '/fr/getting-started/activate-your-subscription/'),
 		makeLink('Première écoute', '/fr/getting-started/first-playback/'),
 	]),
+	makeGroup('Compte et accès', [
+		makeLink('Créer un compte', '/fr/getting-started/create-an-account/'),
+		makeLink('Statut de l’abonnement', '/fr/account-access/subscription-status/'),
+		makeLink('Mots de passe et accès au compte', '/fr/account-access/passwords-account-access/'),
+		makeLink('Utilisation responsable', '/fr/account-access/responsible-use/'),
+		makeLink('Se déconnecter', '/fr/account-access/logging-out/'),
+	]),
 ];
 
 const sidebar = locale === 'en' ? englishSidebar : locale === 'fr' ? frenchSidebar : germanSidebar;
