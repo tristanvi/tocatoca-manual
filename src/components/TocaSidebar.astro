@@ -139,6 +139,13 @@ const frenchSidebar = [
 		makeLink('Utilisation responsable', '/fr/account-access/responsible-use/'),
 		makeLink('Se déconnecter', '/fr/account-access/logging-out/'),
 	]),
+	makeGroup('Dépannage', [
+		makeLink('Pas de son', '/fr/troubleshooting/no-sound/'),
+		makeLink('La lecture ne démarre pas', '/fr/troubleshooting/playback-does-not-start/'),
+		makeLink('La connexion n’est pas mémorisée', '/fr/troubleshooting/login-is-not-remembered/'),
+		makeLink('Recharger la page', '/fr/troubleshooting/reloading-the-page/'),
+		makeLink('Contacter le support', '/fr/troubleshooting/contact-support/'),
+	]),
 ];
 
 const sidebar = locale === 'en' ? englishSidebar : locale === 'fr' ? frenchSidebar : germanSidebar;
