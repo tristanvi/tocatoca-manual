@@ -149,7 +149,20 @@ const frenchSidebar = [
 	makeGroup('FAQ', [makeLink('Questions fréquentes', '/fr/faq-en/')]),
 ];
 
-const sidebar = locale === 'en' ? englishSidebar : locale === 'fr' ? frenchSidebar : germanSidebar;
+const spanishSidebar = [makeGroup('Inicio', [makeLink('TocaToca Manual', '/es/')])];
+
+const italianSidebar = [makeGroup('Inizio', [makeLink('TocaToca Manual', '/it/')])];
+
+const sidebar =
+	locale === 'en'
+		? englishSidebar
+		: locale === 'fr'
+			? frenchSidebar
+			: locale === 'es'
+				? spanishSidebar
+				: locale === 'it'
+					? italianSidebar
+					: germanSidebar;
 ---
 
 <SidebarPersister>
