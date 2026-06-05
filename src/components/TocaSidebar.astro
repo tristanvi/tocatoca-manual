@@ -107,7 +107,17 @@ const englishSidebar = [
 	makeGroup('FAQ', [makeLink('Frequently Asked Questions', '/en/faq-en/')]),
 ];
 
-const sidebar = locale === 'en' ? englishSidebar : germanSidebar;
+const frenchSidebar = [
+	makeGroup('Premiers pas', [
+		makeLink('Qu’est-ce que TocaToca ?', '/fr/getting-started/what-is-tocatoca/'),
+		makeLink('Créer un compte', '/fr/getting-started/create-an-account/'),
+		makeLink('Se connecter', '/fr/getting-started/logging-in/'),
+		makeLink('Activer votre abonnement', '/fr/getting-started/activate-your-subscription/'),
+		makeLink('Première écoute', '/fr/getting-started/first-playback/'),
+	]),
+];
+
+const sidebar = locale === 'en' ? englishSidebar : locale === 'fr' ? frenchSidebar : germanSidebar;
 ---
 
 <SidebarPersister>
