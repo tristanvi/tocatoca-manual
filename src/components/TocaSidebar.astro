@@ -191,7 +191,47 @@ const spanishSidebar = [
 	makeGroup('FAQ', [makeLink('Preguntas frecuentes', '/es/faq-en/')]),
 ];
 
-const italianSidebar = [makeGroup('Inizio', [makeLink('TocaToca Manual', '/it/')])];
+const italianSidebar = [
+	makeGroup('Primi passi', [
+		makeLink('Che cos’è TocaToca?', '/it/getting-started/what-is-tocatoca/'),
+		makeLink('Creare un account', '/it/getting-started/create-an-account/'),
+		makeLink('Accedere', '/it/getting-started/logging-in/'),
+		makeLink('Attivare l’abbonamento', '/it/getting-started/activate-your-subscription/'),
+		makeLink('Primo ascolto', '/it/getting-started/first-playback/'),
+	]),
+	makeGroup('Scoprire musica', [
+		makeLink('Usare la ricerca', '/it/discover-music/using-search/'),
+		makeLink('Trovare artisti', '/it/discover-music/finding-artists/'),
+		makeLink('Trovare album e collezioni', '/it/discover-music/finding-albums-and-collections/'),
+		makeLink('Capire i link degli artisti', '/it/discover-music/understanding-artist-links/'),
+		makeLink('Usare le liste di registrazioni', '/it/discover-music/using-recording-lists/'),
+	]),
+	makeGroup('Ascoltare', [
+		makeLink('Usare il player', '/it/listening/using-the-player/'),
+		makeLink('Coda', '/it/listening/queue/'),
+		makeLink('Preferiti', '/it/listening/favorits/'),
+		makeLink('Playlist', '/it/listening/playlists-en/'),
+	]),
+	makeGroup('Dispositivi', [
+		makeLink('Browser desktop', '/it/devices/desktop-browser-en/'),
+		makeLink('Problemi con i browser mobili', '/it/devices/mobile-browser-issues/'),
+	]),
+	makeGroup('Account e accesso', [
+		makeLink('Creare un account', '/it/getting-started/create-an-account/'),
+		makeLink('Stato dell’abbonamento', '/it/account-access/subscription-status/'),
+		makeLink('Password e accesso all’account', '/it/account-access/passwords-account-access/'),
+		makeLink('Uso responsabile', '/it/account-access/responsible-use/'),
+		makeLink('Uscire dall’account', '/it/account-access/logging-out/'),
+	]),
+	makeGroup('Risoluzione dei problemi', [
+		makeLink('Nessun suono', '/it/troubleshooting/no-sound/'),
+		makeLink('La riproduzione non parte', '/it/troubleshooting/playback-does-not-start/'),
+		makeLink('Il login non viene ricordato', '/it/troubleshooting/login-is-not-remembered/'),
+		makeLink('Ricaricare la pagina', '/it/troubleshooting/reloading-the-page/'),
+		makeLink('Contattare il supporto', '/it/troubleshooting/contact-support/'),
+	]),
+	makeGroup('FAQ', [makeLink('Domande frequenti', '/it/faq-en/')]),
+];
 
 const sidebar =
 	locale === 'en'
